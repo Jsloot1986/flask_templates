@@ -28,3 +28,8 @@ def test_about(client):
 
 
 """ Write your own tests below."""
+
+def test_user(client):
+    response = client.get('/user')
+    assert response.status_code == 200
+    assert b'<title>Jochum</title>' in response.data
